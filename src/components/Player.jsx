@@ -1,18 +1,20 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function Player({name, symbol}) {
 
   const [isEditing, setIsEditing] = useState(false);
 
   function handleEditClic(){
-    setIsEditing(true)
-  }
+    setIsEditing((editing) => !editing);
+  };
 
-  let playerName = <span className="player-name">{name}</span>
+  let playerName = <span className="player-name">{name}</span>;
+  //let btnCaption = 'Edit';
 
   if (isEditing){
-    playerName = <input type="text" required />;
-  }
+    playerName = <input type="text" required value={name}/>;
+    //btnCaption = 'Save';
+  };
 
   return (
     <li>
@@ -23,7 +25,7 @@ export default function Player({name, symbol}) {
         </span>
       </span>
 
-      <button onClick={handleEditClic}>Edit</button>
+      <button onClick={handleEditClic}>{isEditing ? 'Save' : 'Edit'}</button>
     </li>
   )
 }
