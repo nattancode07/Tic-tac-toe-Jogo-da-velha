@@ -1,6 +1,6 @@
 <h1> 
 <img src="public/tic-tac-toe-preview.png">
-<p>Dev Links</p>
+<p>Tic-tac-toe</p>
 </h1>
 
 ## 🚨 Sobre
